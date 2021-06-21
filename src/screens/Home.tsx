@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
+import SearchSVG from "../assets/icons/search.svg";
+import ShoppingCartSVG from "../assets/icons/shopping-cart.svg";
 import HomeSection from "../components/HomeSection";
 
 const Home: React.FC = () => {
@@ -9,11 +10,11 @@ const Home: React.FC = () => {
       <StatusBar barStyle="light-content" />
       <View style={styles.headerContainer}>
         <View style={styles.inputContainer}>
-          <FontAwesome name="search" size={24} color="#969696" />
+          <SearchSVG width={24} height={24} fill="#969696" />
           <Text style={styles.inputText}>Bạn tìm gì hôm nay?</Text>
         </View>
         <View style={styles.cartContainer}>
-          <FontAwesome name="shopping-cart" size={24} color="#fff" />
+          <ShoppingCartSVG width={24} height={24} fill="#fff" />
         </View>
       </View>
       <View style={styles.bodyContainer}>

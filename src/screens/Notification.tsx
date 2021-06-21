@@ -1,6 +1,8 @@
 import React from "react";
 import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import HomeSVG from "../assets/icons/home.svg";
+import RestoreSVG from "../assets/icons/restore.svg";
+import SaleSVG from "../assets/icons/sale.svg";
 import Header from "../components/Header";
 import { Item, NotificationItemProps } from "../types/NotificationItemProps";
 
@@ -15,11 +17,11 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ item }) => (
           },
         ]}
       >
-        <MaterialCommunityIcons
-          name={item.type === 1 ? "sale" : "backup-restore"}
-          color="#fff"
-          size={22}
-        />
+        {item.type === 1 ? (
+          <SaleSVG width={22} height={22} fill="#fff" />
+        ) : (
+          <RestoreSVG width={22} height={22} fill="#fff" />
+        )}
       </View>
       <View style={styles.itemTopTextContainer}>
         <Text style={styles.itemName}>{item.name}</Text>
@@ -41,22 +43,15 @@ const Notification: React.FC = () => {
         <View>
           <View style={styles.buttonActiveContainer}>
             <View style={styles.activeMark} />
-            <MaterialCommunityIcons
-              name="home"
-              color="#949494"
-              size={22}
-              style={styles.activeIcon}
-            />
+            <View style={styles.activeIcon}>
+              <HomeSVG width={22} height={22} fill="#949494" />
+            </View>
           </View>
           <View style={styles.buttonInactiveContainer}>
-            <MaterialCommunityIcons
-              name="backup-restore"
-              color="#949494"
-              size={22}
-            />
+            <RestoreSVG width={22} height={22} fill="#949494" />
           </View>
           <View style={styles.buttonInactiveContainer}>
-            <MaterialCommunityIcons name="sale" color="#949494" size={22} />
+            <SaleSVG width={22} height={22} fill="#949494" />
           </View>
         </View>
         <View style={styles.listContainer}>

@@ -2,7 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import "react-native-gesture-handler";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import HomeSVG from "./assets/icons/home.svg";
+import NotificationSVG from "./assets/icons/notifications.svg";
+import PersonSVG from "./assets/icons/person.svg";
 import Home from "./screens/Home";
 import Notification from "./screens/Notification";
 import Profile from "./screens/Profile";
@@ -24,7 +26,7 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Trang chủ",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="home" size={26} color={color} />
+              <HomeSVG width={26} height={26} fill={color} />
             ),
           }}
         />
@@ -34,7 +36,7 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Thông báo",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="notifications" size={26} color={color} />
+              <NotificationSVG width={26} height={26} fill={color} />
             ),
           }}
         />
@@ -44,7 +46,7 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Cá nhân",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="person" size={26} color={color} />
+              <PersonSVG width={26} height={26} fill={color} />
             ),
           }}
         />

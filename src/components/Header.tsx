@@ -1,8 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { HEADER_ICON_SIZE } from "../constants/HeaderConstants";
 import { HeaderProps } from "../types/HeaderProps";
+
+import ShoppingCartSVG from "../assets/icons/shopping-cart.svg";
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
   <View style={styles.headerContainer}>
@@ -14,7 +15,11 @@ const Header: React.FC<HeaderProps> = ({ title }) => (
     <Text style={styles.headerText}>{title}</Text>
     {/*  */}
     <View style={styles.cartContainer}>
-      <FontAwesome name="shopping-cart" size={HEADER_ICON_SIZE} color="#fff" />
+      <ShoppingCartSVG
+        width={HEADER_ICON_SIZE}
+        height={HEADER_ICON_SIZE}
+        fill="#fff"
+      />
     </View>
   </View>
 );
