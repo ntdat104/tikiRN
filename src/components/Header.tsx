@@ -1,21 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { HEADER_ICON_SIZE } from "../constants/HeaderConstants";
+import { SvgXml } from "react-native-svg";
+import { HEADER_ICON_SIZE } from "../constants/header";
+import { ICONS } from "../constants/icons";
 import { HeaderProps } from "../types/HeaderProps";
-
-import ShoppingCartSVG from "../assets/icons/shopping-cart.svg";
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
   <View style={styles.headerContainer}>
-    {/*  */}
     <View style={styles.cartContainer}>
       <View style={styles.cartIcon} />
     </View>
-    {/*  */}
     <Text style={styles.headerText}>{title}</Text>
-    {/*  */}
     <View style={styles.cartContainer}>
-      <ShoppingCartSVG
+      <SvgXml
+        xml={ICONS.SHOPPINGCART}
         width={HEADER_ICON_SIZE}
         height={HEADER_ICON_SIZE}
         fill="#fff"

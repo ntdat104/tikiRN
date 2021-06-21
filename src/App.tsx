@@ -2,9 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import "react-native-gesture-handler";
-import HomeSVG from "./assets/icons/home.svg";
-import NotificationSVG from "./assets/icons/notifications.svg";
-import PersonSVG from "./assets/icons/person.svg";
+import { SvgXml } from "react-native-svg";
+import { ICONS } from "./constants/icons";
 import Home from "./screens/Home";
 import Notification from "./screens/Notification";
 import Profile from "./screens/Profile";
@@ -26,7 +25,7 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Trang chủ",
             tabBarIcon: ({ color }) => (
-              <HomeSVG width={26} height={26} fill={color} />
+              <SvgXml xml={ICONS.HOME} width={26} height={26} fill={color} />
             ),
           }}
         />
@@ -36,7 +35,12 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Thông báo",
             tabBarIcon: ({ color }) => (
-              <NotificationSVG width={26} height={26} fill={color} />
+              <SvgXml
+                xml={ICONS.NOTIFICATIONS}
+                width={26}
+                height={26}
+                fill={color}
+              />
             ),
           }}
         />
@@ -46,7 +50,7 @@ const App: React.FC = () => {
           options={{
             tabBarLabel: "Cá nhân",
             tabBarIcon: ({ color }) => (
-              <PersonSVG width={26} height={26} fill={color} />
+              <SvgXml xml={ICONS.PERSON} width={26} height={26} fill={color} />
             ),
           }}
         />

@@ -13,7 +13,7 @@ import {
   ITEM_IMAGE_3,
   ITEM_IMAGE_4,
   SECTION_BANNER,
-} from "../constants/ImageList";
+} from "../constants/images";
 import { ProductItemProps } from "../types/ProductItemProps";
 
 const { width } = Dimensions.get("window");

@@ -1,9 +1,8 @@
 import React from "react";
 import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
-import HomeSVG from "../assets/icons/home.svg";
-import RestoreSVG from "../assets/icons/restore.svg";
-import SaleSVG from "../assets/icons/sale.svg";
+import { SvgXml } from "react-native-svg";
 import Header from "../components/Header";
+import { ICONS } from "../constants/icons";
 import { Item, NotificationItemProps } from "../types/NotificationItemProps";
 
 const NotificationItem: React.FC<NotificationItemProps> = ({ item }) => (
@@ -18,9 +17,9 @@ const NotificationItem: React.FC<NotificationItemProps> = ({ item }) => (
         ]}
       >
         {item.type === 1 ? (
-          <SaleSVG width={22} height={22} fill="#fff" />
+          <SvgXml xml={ICONS.SALE} width={22} height={22} fill="#fff" />
         ) : (
-          <RestoreSVG width={22} height={22} fill="#fff" />
+          <SvgXml xml={ICONS.RESTORE} width={22} height={22} fill="#fff" />
         )}
       </View>
       <View style={styles.itemTopTextContainer}>
@@ -44,14 +43,14 @@ const Notification: React.FC = () => {
           <View style={styles.buttonActiveContainer}>
             <View style={styles.activeMark} />
             <View style={styles.activeIcon}>
-              <HomeSVG width={22} height={22} fill="#949494" />
+              <SvgXml xml={ICONS.HOME} width={22} height={22} fill="#949494" />
             </View>
           </View>
           <View style={styles.buttonInactiveContainer}>
-            <RestoreSVG width={22} height={22} fill="#949494" />
+            <SvgXml xml={ICONS.RESTORE} width={22} height={22} fill="#949494" />
           </View>
           <View style={styles.buttonInactiveContainer}>
-            <SaleSVG width={22} height={22} fill="#949494" />
+            <SvgXml xml={ICONS.SALE} width={22} height={22} fill="#949494" />
           </View>
         </View>
         <View style={styles.listContainer}>

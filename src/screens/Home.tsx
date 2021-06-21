@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
-import SearchSVG from "../assets/icons/search.svg";
-import ShoppingCartSVG from "../assets/icons/shopping-cart.svg";
+import { SvgXml } from "react-native-svg";
 import HomeSection from "../components/HomeSection";
+import { ICONS } from "../constants/icons";
 
 const Home: React.FC = () => {
   return (
@@ -10,11 +10,11 @@ const Home: React.FC = () => {
       <StatusBar barStyle="light-content" />
       <View style={styles.headerContainer}>
         <View style={styles.inputContainer}>
-          <SearchSVG width={24} height={24} fill="#969696" />
+          <SvgXml xml={ICONS.SEARCH} width={24} height={24} fill="#969696" />
           <Text style={styles.inputText}>Bạn tìm gì hôm nay?</Text>
         </View>
         <View style={styles.cartContainer}>
-          <ShoppingCartSVG width={24} height={24} fill="#fff" />
+          <SvgXml xml={ICONS.SHOPPINGCART} width={24} height={24} fill="#fff" />
         </View>
       </View>
       <View style={styles.bodyContainer}>

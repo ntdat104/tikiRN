@@ -1,34 +1,44 @@
 import React from "react";
 import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
-import AngleSVG from "../assets/icons/angle.svg";
-import BookmarkSVG from "../assets/icons/bookmark.svg";
-import EyeSVG from "../assets/icons/eye.svg";
-import HeartSVG from "../assets/icons/heart.svg";
-import HelpSVG from "../assets/icons/help.svg";
-import ListSVG from "../assets/icons/list.svg";
-import PersonSVG from "../assets/icons/person.svg";
-import ShoppingCartSVG from "../assets/icons/shopping-cart.svg";
-import StarSVG from "../assets/icons/star.svg";
+import { SvgXml } from "react-native-svg";
 import Header from "../components/Header";
+import { ICONS } from "../constants/icons";
 import { ProfileItemProps } from "../types/ProfileItemProps";
 
 const ProfileItem: React.FC<ProfileItemProps> = ({ icon, name }) => {
   const renderIcon = (icon: string) => {
     switch (icon) {
       case "list":
-        return <ListSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml xml={ICONS.LIST} width={26} height={26} fill="#1e1e1e" />
+        );
       case "shopping-cart":
-        return <ShoppingCartSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml
+            xml={ICONS.SHOPPINGCART}
+            width={26}
+            height={26}
+            fill="#1e1e1e"
+          />
+        );
       case "eye":
-        return <EyeSVG width={26} height={26} fill="#1e1e1e" />;
+        return <SvgXml xml={ICONS.EYE} width={26} height={26} fill="#1e1e1e" />;
       case "heart":
-        return <HeartSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml xml={ICONS.HEART} width={26} height={26} fill="#1e1e1e" />
+        );
       case "bookmark":
-        return <BookmarkSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml xml={ICONS.BOOKMARK} width={26} height={26} fill="#1e1e1e" />
+        );
       case "star":
-        return <StarSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml xml={ICONS.STAR} width={26} height={26} fill="#1e1e1e" />
+        );
       case "help":
-        return <HelpSVG width={26} height={26} fill="#1e1e1e" />;
+        return (
+          <SvgXml xml={ICONS.HELP} width={26} height={26} fill="#1e1e1e" />
+        );
     }
   };
 
@@ -38,7 +48,7 @@ const ProfileItem: React.FC<ProfileItemProps> = ({ icon, name }) => {
       <Text style={[styles.itemText, { marginLeft: icon ? 20 : 0 }]}>
         {name}
       </Text>
-      <AngleSVG width={26} height={26} fill="#1e88e5" />
+      <SvgXml xml={ICONS.ANGLE} width={26} height={26} fill="#1e88e5" />
     </View>
   );
 };
@@ -51,13 +61,13 @@ const Profile: React.FC = () => {
       <View style={styles.bodyContainer}>
         <View style={styles.userContainer}>
           <View style={styles.avatarContainer}>
-            <PersonSVG width={26} height={26} fill="#fff" />
+            <SvgXml xml={ICONS.PERSON} width={26} height={26} fill="#fff" />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.welcomeText}>Chào mừng bạn đến với Tiki</Text>
             <Text style={styles.authText}>Đăng nhập/Đăng ký</Text>
           </View>
-          <AngleSVG width={26} height={26} fill="#1e88e5" />
+          <SvgXml xml={ICONS.ANGLE} width={26} height={26} fill="#1e88e5" />
         </View>
         <View style={styles.divider}></View>
         <ProfileItem icon="list" name="Quản lý đơn hàng" />
