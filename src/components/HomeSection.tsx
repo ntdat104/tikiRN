@@ -7,13 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import {
-  ITEM_IMAGE_1,
-  ITEM_IMAGE_2,
-  ITEM_IMAGE_3,
-  ITEM_IMAGE_4,
-  SECTION_BANNER,
-} from "../constants/images";
+import { IMAGES } from "../constants/images";
 import { ProductItemProps } from "../types/ProductItemProps";
 
 const { width } = Dimensions.get("window");
@@ -32,7 +26,7 @@ const HomeSection: React.FC = () => {
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>Điện thoại - Máy tính bảng</Text>
-      <Image source={SECTION_BANNER} style={styles.sectionImage} />
+      <Image source={IMAGES.SECTION_BANNER} style={styles.sectionImage} />
       <ScrollView horizontal={true}>
         <View style={styles.filterContainer}>
           {[
@@ -40,7 +34,7 @@ const HomeSection: React.FC = () => {
             "Điện thoại SmartPhone",
             "Máy tính bảng",
             "Điện thoại",
-          ].map((e, index) => (
+          ].map((item, index) => (
             <View
               key={index.toString()}
               style={
@@ -56,7 +50,7 @@ const HomeSection: React.FC = () => {
                     : styles.filterInactiveText
                 }
               >
-                {e}
+                {item}
               </Text>
             </View>
           ))}
@@ -65,10 +59,10 @@ const HomeSection: React.FC = () => {
       <ScrollView horizontal={true}>
         <View style={styles.listItemContainer}>
           {[
-            { image1: ITEM_IMAGE_1, image2: ITEM_IMAGE_2 },
-            { image1: ITEM_IMAGE_2, image2: ITEM_IMAGE_3 },
-            { image1: ITEM_IMAGE_4, image2: ITEM_IMAGE_1 },
-            { image1: ITEM_IMAGE_1, image2: ITEM_IMAGE_2 },
+            { image1: IMAGES.ITEM_IMAGE_1, image2: IMAGES.ITEM_IMAGE_2 },
+            { image1: IMAGES.ITEM_IMAGE_2, image2: IMAGES.ITEM_IMAGE_3 },
+            { image1: IMAGES.ITEM_IMAGE_4, image2: IMAGES.ITEM_IMAGE_1 },
+            { image1: IMAGES.ITEM_IMAGE_1, image2: IMAGES.ITEM_IMAGE_2 },
           ].map((item, index) => (
             <View key={index.toString()}>
               <ProductItem
